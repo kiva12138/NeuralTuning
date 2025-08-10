@@ -73,8 +73,8 @@ The detailed fields of each sample are shown as follows.
 | **image\_path**    | Path to the image file for the sample (e.g., `1603.jpg`).|
 | **caption**        | A short natural-language description of the image’s overall content. Example: *"The image shows an indoor setting that appears to be a bustling kitchen or food preparation area..."*|
 | **enriched\_text** | A complex reasoning paragraph paired with a **question–answer** format, enriched with **object tags**. The *question* requires multi-step reasoning about the image. The *answer* provides a detailed explanation, with tagged references (`<LCL-i>`) linking to specific objects in the image. Example: *"##Question: How would one effectively utilize the space in this bustling kitchen, considering the placement of the rightmost table and the buffet table near the camera, to streamline the prep and serving process for an upcoming event? ##Answer `<SEP>`To effectively utilize the space... The rightmost table`<LCL-1>`... The buffet table `<LCL-2>`..."*  |
-| **sample_texts**       | Original short descriptions of **individual objects** in the image. |
-| **sample_masks**       | Binary segmentation masks for each object (aligned with `sample_texts` and `enriched_text`). |
+| **sample_texts**       | Original short descriptions of **individual objects** in the image. Example: *"The right table"*, "*The left table*"|
+| **sample_masks**       | Segmentation masks for each object (aligned with `sample_texts` and `enriched_text`). |
 | **sample_boxs**        | Bounding box coordinates for each object (aligned with `sample_texts` and `enriched_text`). |
 | **sample_height**      | Image height in pixels. |
 | **sample_width**       | Image width in pixels. |
