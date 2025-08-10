@@ -88,7 +88,7 @@ The detailed fields of each sample are shown as follows.
 	<img src="figures/datasetconstruction.png" alt="Dataset Construction Procedure" width="600"/>
 </p>
 <p align="center">
-	<b>Figure 3:</b> MMUD Dataset Construction Pipeline.
+	<b>Figure 4:</b> MMUD Dataset Construction Pipeline.
 </p>
 
 ### Data Access
