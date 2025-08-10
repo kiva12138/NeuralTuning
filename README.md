@@ -84,13 +84,6 @@ The detailed fields of each sample are shown as follows.
 | **enriched_text_len**  | Length of the enriched text in tokens (e.g., `270`). |
 ---
 
-<p align="center">
-	<img src="figures/datasetconstruction.png" alt="Dataset Construction Procedure" width="600"/>
-</p>
-<p align="center">
-	<b>Figure 5:</b> MMUD Dataset Construction Pipeline.
-</p>
-
 ### Data Access
 - **Download Link:** [MMUD(Extaction code: gfqd)](https://pan.baidu.com/s/1EcsA3VfkyNcaJZpBnlZX-g?pwd=gfqd) (The CLIPGENFeatureUN fold contains all image features from CLIP. We train our model to align to them for image generation)
 - **Dataset Loader Example:** [MMUDDataLoader.py](https://github.com/kiva12138/NeuralTuning/blob/main/MMUD/MMUDDataLoader.py)
