@@ -63,7 +63,7 @@ Specifically, this dataset provides image captions, complex question–answer pa
 	<img src="figures/datasetconstruction.png" alt="Dataset Construction Procedure" width="600"/>
 </p>
 <p align="center">
-	<b>Figure 3:</b> MMUD Dataset Construction Procedure.
+	<b>Figure 4:</b> MMUD Dataset Construction Procedure.
 </p>
 
 The detailed fields of each sample are shown as follows.
@@ -88,7 +88,7 @@ The detailed fields of each sample are shown as follows.
 	<img src="figures/datasetconstruction.png" alt="Dataset Construction Procedure" width="600"/>
 </p>
 <p align="center">
-	<b>Figure 4:</b> MMUD Dataset Construction Pipeline.
+	<b>Figure 5:</b> MMUD Dataset Construction Pipeline.
 </p>
 
 ### Data Access
