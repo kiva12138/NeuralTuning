@@ -1,2 +1,5 @@
 # NeuralTuning
+
 The official datasets and codes for paper "One Framework to Rule Them All: Unifying Multimodal Tasks with LLM Neural-Tuning" in Pattern Recognition
+
+> *Large-scale models have shown impressive abilities across various domains, but most are limited to single-modality data. NeuralTuning addresses this by introducing a unified framework capable of handling multiple tasks and modalities through a consistent token-based approach. Inspired by sparse distributed representation in the human brain, our novel neural tuning strategy enables efficient multitask processing by activating only relevant neuron subsets for each task. We also introduce MMUD, a new benchmark with diverse multimodal and multitask annotations, to advance research in this area. NeuralTuning demonstrates the ability to streamline and unify multimodal, multitask learning using large pretrained models.*
