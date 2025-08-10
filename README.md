@@ -92,7 +92,7 @@ The detailed fields of each sample are shown as follows.
 </p>
 
 ### Data Access
-- **Download Link:** [MMUD(Extaction code: gfqd)](https://pan.baidu.com/s/1EcsA3VfkyNcaJZpBnlZX-g?pwd=gfqd) 
+- **Download Link:** [MMUD(Extaction code: gfqd)](https://pan.baidu.com/s/1EcsA3VfkyNcaJZpBnlZX-g?pwd=gfqd) (The CLIPGENFeatureUN fold contains all image features from CLIP. We train our model to align to them for image generation)
 - **Dataset Loader Example:** [MMUDDataLoader.py](https://github.com/kiva12138/NeuralTuning/blob/main/MMUD/MMUDDataLoader.py)
 
 If you have issues downloading or accessing the dataset, please don't hesitate to contact me: ```sunahoxx@zju.edu.cn```. I could sent you the files directly by email.
