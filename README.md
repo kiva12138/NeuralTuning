@@ -124,7 +124,7 @@ All of the tuning codes of our framework are shown in `/Codes` folder. Note that
 - `Utils.py` provides some useful tools
 
 **Before your run your codes:**
-As we align our `<GLB>` token features to CLIP features to use pretrained VQGANs for image generation, please generate corresponding CLIP features for each image firstly. After that, rename each feature file to `image_name.pkl` and save them to `ClipGenFeaturePath` (in `Config.py`). We are so sorry we cannot directly provide you processed features (the codes and corresponding featuers are missing). 
+As we align our `<GLB>` token features to CLIP features to use pretrained VQGANs for image generation, please download and put `CLIPGENFeatureUN.zip` in the path of `ClipGenFeaturePath` from `Config.py`.
 
 **To run the codes, here is an example:**
 ```
