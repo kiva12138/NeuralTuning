@@ -123,7 +123,7 @@ All of the tuning codes of our framework are shown in `/Codes` folder. Note that
 - The main tuning and testing loops are in `Solver.py`
 - `Utils.py` provides some useful tools
 
-**Before your run your codes:**
+**Before running your codes:**
 As we align our `<GLB>` token features to CLIP features to use pretrained VQGANs for image generation, please download and put `CLIPGENFeatureUN.zip` in the path of `ClipGenFeaturePath` from `Config.py`.
 
 **To run the codes, here is an example:**
