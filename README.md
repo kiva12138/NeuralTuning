@@ -93,7 +93,7 @@ The detailed fields of each sample are shown as follows.
 
 ### Data Access
 - **Download Link:** [MMUD(Extaction code: gfqd)](https://pan.baidu.com/s/1EcsA3VfkyNcaJZpBnlZX-g?pwd=gfqd) 
-- **Dataset Loader Example:** [MMUDDataLoader.py](https://github.com/kiva12138/NeuralTuning/blob/main/MMUDDataLoader.py)
+- **Dataset Loader Example:** [MMUDDataLoader.py](https://github.com/kiva12138/NeuralTuning/blob/main/MMUD/MMUDDataLoader.py)
 
 If you have issues downloading or accessing the dataset, please don't hesitate to contact me: ```sunahoxx@zju.edu.cn```. I could sent you the files directly by email.
 
@@ -110,6 +110,36 @@ image_path, caption, enriched_text, sample_texts, sample_masks, sample_boxs, sam
 
 print(image_path, caption, enriched_text, sample_texts, sample_masks, sample_boxs, sample_height, sample_width, sample_category, sample_category_text, caption_len, enriched_text_len, sep='\n')
 ```
+
+## Codes
+**There are only implementation codes for tuning. We will release inference codes later.**
+
+All of the tuning codes of our framework are shown in `/Codes` folder. Note that our method modifies the structure of LLaMA model, and runs on ```transformers==4.37```. We recommand to use the same version of transformers. The codes are implemented under several software engineering constraints, we think they are easy to understand.
+
+- The main model structure is shown in `ModelEMA.py`
+- The decoder for segmentation and image generation are implemented in `ModelGlobalDecoder.py` and `ModelMaskDecoder.py`
+- All of the tunable parameters are listed in `Parameter.py`, you can adjust some parameters as you wish.
+- The dataset loader are implemented in `Dataset.py`
+- The main tuning and testing loops are in `Solver.py`
+- `Utils.py` provides some useful tools
+
+**Before your run your codes:**
+As we align our `<GLB>` token features to CLIP features to use pretrained VQGANs for image generation, please generate corresponding CLIP features for each image firstly. After that, rename each feature file to `image_name.pkl` and save them to `ClipGenFeaturePath` (in `Config.py`). We are so sorry we cannot directly provide you processed features (the codes and corresponding featuers are missing). 
+
+**To run the codes, here is an example:**
+```
+sh = 'OMP_NUM_THREADS=1 torchrun --nnodes=1 --nproc_per_node=4 Main.py --task_name Run2UN '+\
+'--batch_size 8 --num_workers 4 --drop_last --image_size 224 --max_length 300 --mask_length 5 --float16 --vision_dtype_half '+\
+'--a1 1.0 --a2 10.0 --a3 1.0 --c1 0.0 --c2 1.0 --attention flash_attention_2 --checkpoint '+\
+'--ts_start_layer 16 --space_project_modules qv --ts_space_dimension 128 --ts_space_active_rate 0.4 --ts_space_dropout 0.0 --ts_ema_alpha 0.2 '+\
+'--decoder_extract_layers 23-17-14 --gdecoder_hidden_dim 1024 --gdecoder_hidden_dropout 0.0 '+\
+'--ldecoder_reduce_dim 64 --ldecoder_num_attention_heads 4 --ldecoder_dropout 0.0 --ldecoder_intermediate_size 128 '+\
+'--seed 0 --optm Adam --weight_decay 0.1 --prompt_lr 1e-4 --ldecoder_lr 1e-4 --gdecoder_lr 1e-4 --embed_lr 1e-4 '+\
+'--epochs_num 50 --warmup_steps 200 --print_iter 10 --lr_decrease_iter 5-10 --lr_decrease_rate 0.1 --gradient_clip 1 --gradient_norm -1 --print_params '
+print(sh)
+!{sh}
+```
+
 
 ## Citation
 
